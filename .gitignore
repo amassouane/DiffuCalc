@@ -11,3 +11,6 @@ instance/users.db
 
 # Fichier d'environnement
 .env
+
+# Fichiers de configuration
+config.py
