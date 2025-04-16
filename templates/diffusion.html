@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calcul </title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styl.css') }}">
+</head>
+<body>
+    <div class="container" style="text-align: center;">
+        <h2>🖩 Calculateur de coefficient de diffusion🔢</h2>
+
+        <form method="POST">
+            {% for key, value in default.items() %}
+                <div class="form-group">
+                    <label><strong>{{ key }}</strong> :</label><br>
+                    <input type="text" name="{{ key }}" value="{{ value }}" required class="input-field"><br>
+                </div>
+            {% endfor %}
+            <button type="submit" class="button">Calculer</button>
+        </form>
+
+        <a href="{{ url_for('home') }}" class="button">🏠 Retour à l'accueil</a>
+    </div>
+    <footer>©2025_FSTS-CHOUMAIS Hanae-Pic</footer>
+</body>
+</html>

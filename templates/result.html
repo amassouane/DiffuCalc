@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Résultat du calcul</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styl.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2>📊 Résultats du calcul du coefficient de diffusion 📊</h2>
+
+        <div class="result-box">
+            <p><strong>θ_AA :</strong> {{ "%.4f"|format(theta_AA) }}</p>
+            <p><strong>θ_AB :</strong> {{ "%.4f"|format(theta_AB) }}</p>
+            <p><strong>θ_BA :</strong> {{ "%.4f"|format(theta_BA) }}</p>
+            <p><strong>θ_BB :</strong> {{ "%.4f"|format(theta_BB) }}</p>
+            <hr>
+            <p><strong>Coefficient calculé D<sub>calc</sub> :</strong> {{ "%.2e"|format(D_calc) }} cm²/s</p>
+            <p><strong>Valeur expérimentale D<sub>exp</sub> :</strong> {{ "%.2e"|format(D_exp) }} cm²/s</p>
+            <p><strong>Erreur :</strong> {{ "%.2f"|format(erreur) }}%</p>
+        </div>
+
+        <div class="button-group">
+            <a href="{{ url_for('diffusion') }}" class="button">⟲ Nouveau calcul</a>
+            <a href="{{ url_for('home') }}" class="button">🏠 Accueil</a>
+        </div>
+    </div>
+    <footer>©2025_FSTS-CHOUMAIS Hanae-Pic</footer>
+</body>
+</html>
+

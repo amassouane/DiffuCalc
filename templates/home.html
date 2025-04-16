@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Accueil</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styl.css') }}">
+</head>
+<body>
+    <div class="home-container">
+        <div class="home-left">
+            <h1>Bienvenue dans le calculateur de coefficient de diffusion 🧪</h1>
+            <p>Cette application permet de calculer le coefficient de diffusion pour le système <strong>méthanol (A)</strong> - <strong>eau (B)</strong> à 313,13 K en utilisant la méthode de Hsu et Chen.</p>
+        </div>
+        <div class="home-right">
+            {% if session.user_id %}
+                <a href="{{ url_for('diffusion') }}" class="button">Commencer le calcul</a>
+                <a href="{{ url_for('logout') }}" class="button">Se déconnecter</a>
+            {% else %}
+                <a href="{{ url_for('login') }}" class="button">Se connecter</a>
+                <a href="{{ url_for('register') }}" class="button">Créer un compte</a>
+            {% endif %}
+            <a href="{{ url_for('explanation') }}" class="button">Explication</a>
+        </div>
+    </div>
+    <footer>©2025_FSTS-CHOUMAIS Hanae-Pic</footer>
+</body>
+</html>

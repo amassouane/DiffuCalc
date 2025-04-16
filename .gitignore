@@ -1,0 +1,13 @@
+# Environnement virtuel
+venv/
+
+# Fichiers Python compilés
+__pycache__/
+*.pyc
+
+# Fichier de base de données
+users.db
+instance/users.db
+
+# Fichier d'environnement
+.env

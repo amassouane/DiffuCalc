@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Explication</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styl.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Explication</h1>
+        <p>Cette application calcule le coefficient de diffusion (<strong>D_AB</strong>) entre deux liquides comme le méthanol et l'eau en appliquant le modèle thermodynamique de Hsu et Chen.</p>
+        <p>À partir des fractions molaires, des paramètres moléculaires (tailles et surfaces des molécules) et des coefficients d'interaction spécifiques, elle détermine la vitesse de diffusion mutuelle des composants dans le mélange.</p>
+        <p>Le résultat principal est la valeur précise du coefficient de diffusion exprimée en cm²/s, avec la possibilité de comparer cette prédiction théorique à des données expérimentales pour en évaluer la justesse.</p>
+        <p>Cette méthode, alternative aux approches classiques, se distingue par son indépendance vis-à-vis du facteur de correction thermodynamique traditionnel.</p>
+        <a href="{{ url_for('home') }}" class="button">Retour à l'accueil</a>
+    </div>
+    <footer>©2025_FSTS-CHOUMAIS Hanae-Pic</footer>
+</body>
+</html>

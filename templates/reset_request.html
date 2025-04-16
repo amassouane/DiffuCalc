@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Réinitialisation du mot de passe 🔓</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styl.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2>🔑 Mot de passe oublié ?</h2>
+
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                {% for category, message in messages %}
+                    <p class="flash {{ category }}">{{ message }}</p>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+
+        <form method="POST">
+            <div class="form-group">
+                <input type="email" name="email" placeholder="Entrez votre email" class="input-field" required>
+            </div>
+            <button type="submit" class="button">Envoyer le lien</button>
+        </form>
+
+        <p><a href="{{ url_for('login') }}">Retour à la connexion</a></p>
+    </div>
+    <footer>©2025_FSTS-CHOUMAIS Hanae-Pic</footer>
+</body>
+</html>

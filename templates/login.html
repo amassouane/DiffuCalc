@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Connexion</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styl.css') }}">
+    <style>
+        .flash.success {
+            color: green;
+        }
+        .flash.error {
+            color: red;
+        }
+    </style>
+    <script>
+        // Redirection automatique après 2 secondes si connecté avec succès
+        document.addEventListener('DOMContentLoaded', function () {
+            const successMessage = document.querySelector('.flash.success');
+            if (successMessage) {
+                setTimeout(() => {
+                    window.location.href = "{{ url_for('diffusion') }}";
+                }, 2000);
+            }
+        });
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>Se connecter 🔑</h1>
+        <p>Accédez à votre compte pour continuer.</p>
+
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                <div class="flash-container">
+                    {% for category, message in messages %}
+                        <p class="flash {{ category }}">{{ message }}</p>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        {% endwith %}
+
+        <form method="POST">
+            <div class="form-group">
+                <input type="email" name="email" placeholder="Adresse email" class="input-field" required>
+            </div>
+            <div class="form-group">
+                <input type="password" name="password" placeholder="Mot de passe" class="input-field" required>
+            </div>
+            <button type="submit" class="button">Se connecter</button>
+        </form>
+        <p><a href="{{ url_for('reset_request') }}">Mot de passe oublié ?</a></p>
+        <p>Vous n'avez pas de compte ? <a href="{{ url_for('register') }}">Créer un compte</a></p>
+    </div>
+    <footer>©2025_FSTS-CHOUMAIS Hanae-Pic</footer>
+</body>
+</html>

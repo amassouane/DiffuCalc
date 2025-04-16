@@ -1,0 +1,322 @@
+/* Corps de la page */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #d6d9f0; /* Couleur de fond similaire */
+    text-align: center;
+    padding: 40px;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    min-height: 100vh; /* Hauteur minimale pour occuper tout l'écran */
+    padding-bottom: 50px; /* Adjust to match footer height */
+}
+
+/* Carte principale */
+.container {
+    max-width: 400px;
+    background: linear-gradient(145deg, #e0f7fa, #e3f2fd); /* Soft gradient */
+    padding: 30px;
+    border-radius: 25px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2); /* Enhanced shadow */
+    text-align: center;
+    position: relative;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Image de profil */
+.profile-picture img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 4px solid white;
+    margin-bottom: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+/* Nom et localisation */
+h1, h2 {
+    color: #2c3e50; /* Darker text */
+    margin: 10px 0;
+    font-weight: bold;
+}
+
+.location {
+    font-size: 14px;
+    color: #7f8c8d; /* Subtle gray */
+    margin-bottom: 20px;
+}
+
+/* Bouton moderne */
+.button, .view-content {
+    background: linear-gradient(145deg, #6a11cb, #2575fc); /* Gradient violet-bleu */
+    color: white;
+    padding: 15px 40px;
+    margin: 15px 0;
+    text-decoration: none;
+    border-radius: 50px; /* Boutons arrondis */
+    font-size: 16px;
+    font-weight: bold;
+    display: inline-block;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Ombre douce */
+}
+
+.button:hover, .view-content:hover {
+    background: linear-gradient(145deg, #2575fc, #6a11cb); /* Inversion du gradient */
+    transform: translateY(-5px); /* Effet de levée */
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3); /* Ombre plus forte */
+}
+
+/* Menu hamburger */
+.menu-icon {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 25px;
+    height: 3px;
+    background-color: #34495e;
+    border-radius: 2px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.menu-icon::after, .menu-icon::before {
+    content: '';
+    position: absolute;
+    width: 25px;
+    height: 3px;
+    background-color: #34495e;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+.menu-icon::before {
+    top: -8px;
+}
+
+.menu-icon::after {
+    top: 8px;
+}
+
+/* Champs de formulaire */
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    padding: 12px;
+    margin: 10px 0;
+    width: 100%; /* Full width for consistency */
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+/* Form alignment for consistency */
+form {
+    text-align: center;
+    margin: auto;
+    max-width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%; /* Largeur complète */
+    max-width: 400px; /* Largeur maximale */
+}
+
+/* Boîte de résultats */
+.result-box {
+    background-color: #f3e8ff; /* Fond violet clair */
+    border-left: 5px solid #6a0dad; /* Bordure violette */
+    padding: 20px;
+    margin: 30px auto;
+    text-align: left;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(128, 0, 128, 0.2); /* Ombre violette */
+}
+
+/* Groupes de formulaire */
+.form-group {
+    margin-bottom: 15px;
+}
+
+/* Messages flash */
+.flash {
+    padding: 12px;
+    margin: 15px auto;
+    width: 90%;
+    border-radius: 8px;
+    font-size: 14px;
+    text-align: center;
+}
+
+.flash.success {
+    background-color: #d4edda; /* Vert clair */
+    color: #155724; /* Texte vert foncé */
+    border: 2px solid #c3e6cb; /* Bordure verte */
+}
+
+.flash.danger {
+    background-color: #f8d7da; /* Rouge clair */
+    color: #721c24; /* Texte rouge foncé */
+    border: 2px solid #f5c6cb; /* Bordure rouge */
+}
+
+.flash.success {
+    background-color: #e6e0f8; /* Fond violet clair */
+    color: #4b0082; /* Texte indigo */
+    border-left: 5px solid #6a0dad; /* Bordure violette */
+}
+
+.flash.danger {
+    background-color: #f8e0e6; /* Fond rouge clair */
+    color: #721c24;
+    border-left: 5px solid #dc3545;
+}
+
+.flash.warning {
+    background-color: #fff3cd;
+    color: #856404;
+    border-left: 5px solid #ffc107;
+}
+
+.flash.info {
+    background-color: #e0f7fa; /* Fond bleu clair */
+    color: #007bff; /* Texte bleu */
+    border-left: 5px solid #007bff; /* Bordure bleue */
+}
+
+/* Liens */
+a {
+    color: #6a0dad; /* Violet foncé */
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: #4b0082; /* Indigo au survol */
+}
+
+/* Home Page Layout */
+.home-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: auto;
+    padding: 40px;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    flex-direction: column; /* Empile les sections verticalement */
+    padding: 20px;
+}
+
+.home-left {
+    flex: 1;
+    padding: 20px;
+    text-align: left;
+    text-align: center;
+    margin-bottom: 20px; /* Espacement entre les sections */
+}
+
+.home-left h1 {
+    font-size: 2rem;
+    color: #2c3e50;
+    margin-bottom: 20px;
+}
+
+.home-left p {
+    font-size: 1rem;
+    color: #7f8c8d;
+}
+
+.home-right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(145deg, #e0f7fa, #e3f2fd); /* Soft gradient */
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    text-align: center;
+    margin-bottom: 20px; /* Espacement entre les sections */
+}
+
+.home-right h2 {
+    font-size: 1.5rem;
+    color: #34495e;
+    margin-bottom: 10px;
+}
+
+.home-right p {
+    font-size: 1rem;
+    color: #7f8c8d;
+}
+
+/* Centrage global */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Hauteur minimale pour occuper tout l'écran */
+    margin: 0;
+    background-color: #d6d9f0; /* Couleur de fond */
+    padding-bottom: 50px; /* Adjust to match footer height */
+}
+
+/* Conteneur principal centré */
+.container, .home-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: auto;
+}
+
+/* Formulaire centré */
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%; /* Largeur complète */
+    max-width: 400px; /* Largeur maximale */
+}
+
+/* Boutons centrés */
+.button-group {
+    display: flex;
+    justify-content: center;
+    gap: 10px; /* Espacement entre les boutons */
+}
+
+/* Centrage des sections gauche et droite */
+.home-container {
+    flex-direction: column; /* Empile les sections verticalement */
+    padding: 20px;
+}
+
+.home-left, .home-right {
+    text-align: center;
+    margin-bottom: 20px; /* Espacement entre les sections */
+}
+
+/* Footer styles */
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    background-color: white; /* Optional for better visibility */
+}
+

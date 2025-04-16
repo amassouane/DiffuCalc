@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Nouveau mot de passe</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styl.css') }}">
+    <style>
+        body {
+            padding-bottom: 50px;
+        }
+        h2 {
+            text-align: center;
+        }
+        footer {
+            background-color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>🔐 Réinitialiser le mot de passe</h2>
+        <form method="POST">
+            <div class="form-group">
+                <input type="password" name="password" placeholder="Nouveau mot de passe" class="input-field" required>
+            </div>
+            <button type="submit" class="button">Réinitialiser🔓</button>
+        </form>
+        <p><a href="{{ url_for('login') }}">Retour à la connexion</a></p>
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                {% for category, message in messages %}
+                    <p class="flash {{ category }}">{{ message }}</p>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+    </div>
+    <footer>©2025_FSTS-CHOUMAIS Hanae-Pic</footer>
+</body>
+</html>

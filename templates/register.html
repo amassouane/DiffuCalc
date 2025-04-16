@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block title %}Inscription{% endblock %}
+
+{% block content %}
+<h1>Créer un compte 👤</h1>
+<p>Rejoignez-nous pour le calcul de coefficient de diffusion.</p>
+<form method="POST" action="{{ url_for('register') }}">
+    <div class="form-group">
+        <input type="text" id="first_name" name="first_name" placeholder="Prénom" class="input-field" required>
+    </div>
+    <div class="form-group">
+        <input type="text" id="last_name" name="last_name" placeholder="Nom" class="input-field" required>
+    </div>
+    <div class="form-group">
+        <input type="date" id="birth_date" name="birth_date" placeholder="Date de naissance" class="input-field" required>
+    </div>
+    <div class="form-group">
+        <input type="text" id="education_level" name="education_level" placeholder="Filière d'étude" class="input-field" required>
+    </div>
+    <div class="form-group">
+        <input type="email" id="email" name="email" placeholder="Adresse email" class="input-field" required>
+    </div>
+    <div class="form-group">
+        <input type="password" id="password" name="password" placeholder="Mot de passe (au moins une majuscule, un chiffre et un symbole)" class="input-field" pattern="(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}" title="Le mot de passe doit contenir au moins une majuscule, un chiffre, un symbole et 8 caractères minimum." required>
+    </div>
+    <div class="form-group">
+        <input type="password" id="confirm_password" name="confirm_password" placeholder="Confirmer le mot de passe" class="input-field" required>
+    </div>
+    <!-- Google reCAPTCHA -->
+    <div class="g-recaptcha" data-sitekey="{{ recaptcha_site_key }}"></div>
+    <button type="submit" class="button">S'inscrire</button>
+</form>
+
+<!-- Script reCAPTCHA -->
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
+<p>Vous avez déjà un compte ? <a href="{{ url_for('login') }}">Se connecter</a></p>
+<footer>©2025_FSTS-CHOUMAIS Hanae-Pic</footer>
+{% endblock %}
