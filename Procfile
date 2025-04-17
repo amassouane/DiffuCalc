@@ -1,1 +1,1 @@
-web: gunicorn qpp:qpp
+web: gunicorn app:app
