@@ -1,1 +1,1 @@
-web: gunicorn DiffuCalc-APP-Hanae-:Web
+web: gunicorn qpp:qpp
