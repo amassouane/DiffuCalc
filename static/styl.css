@@ -170,7 +170,7 @@ form {
 
 .flash.success {
     background-color: #e6e0f8; /* Fond violet clair */
-    color: #4b0082; /* Texte indigo */
+    color: #ccc1cf; /* Texte indigo */
     border-left: 5px solid #6a0dad; /* Bordure violette */
 }
 

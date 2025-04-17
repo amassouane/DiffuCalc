@@ -15,7 +15,7 @@ app = Flask(__name__)
 app.config.from_pyfile('config.py')
 
 # Ajouter la configuration de la base de données
-app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv('DATABASE_URL', 'sqlite:///app.db')  # Utilise SQLite par défaut
+app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv('DATABASE_URL', 'sqlite:///app.db')
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False  # Désactiver le suivi des modifications pour éviter les avertissements
 
 db = SQLAlchemy(app)  # Initialiser SQLAlchemy après avoir configuré l'application
